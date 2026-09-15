@@ -8,7 +8,7 @@
   ###### results#### 
   dir.create("Results")
   
-  #################### SETUP- For reproducibility####################
+  #################### SETUP- For reproducibility##########################
   library(tidyverse)
   library(readxl)
   library(caret)
@@ -194,11 +194,6 @@ model_svm<-train(MDR~.,train_bal,method="svmRadial",trControl=ctrl,metric="ROC")
 print(model_svm)
 
 
-######K-NN###
-model_knn<-train(MDR~.,data=train_bal,method="knn",
-                 trControl=ctrl,metric="ROC")
-
-print(model_knn)
 
 ####comparison####
 results<-resamples(list(
